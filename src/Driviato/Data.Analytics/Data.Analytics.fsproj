@@ -58,16 +58,21 @@
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
   <ItemGroup>
+    <Compile Include="SendGridNotification.fs" />
+    <Compile Include="BrainTreeDebitService.fs" />
     <Compile Include="DriverProfile.fs" />
     <None Include="DebtBrainTreeScript.fsx" />
     <None Include="GetDriverPositionScript.fsx" />
     <None Include="GetSpeedLimitScript.fsx" />
     <None Include="SendGridScript.fsx" />
-    <None Include="VenomoScript.fsx" />
-    <Compile Include="SendGridNotification.fs" />
+    <None Include="VenmoScript.fsx" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Braintree-2.40.0">
+      <HintPath>..\packages\Braintree.2.40.0\lib\Braintree-2.40.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
