@@ -14,10 +14,25 @@ namespace Web.Api.Controllers
     public class FlagsController : ApiController
     {
         // POST api/values
-        public void Post([FromBody]DriverPosition driverPosition)
+        public void Post([FromBody]Flag [] flags)
         {
             var collection = MongoHelper.Current.Database.GetCollection<DriverPosition>("driverpositions");
-            collection.Insert(driverPosition);
+            foreach (var item in flags)
+            {
+                var driverPosition = new DriverPosition
+                                        {
+                                            DriverId = item.CustomerId,
+                                            Latitude = item.Position.Coordinates.Latitude,
+                                            Longitude = item.Position.Coordinates.Longtitude,
+                                            Altitude = item.Altitude,
+                                            AltitudeAccuracy = item.AltitudeAccuracy,
+                                            TimeStamp = item.Time,
+                                            Heading = item.Heading,
+                                          ////Type = item.Type,
+                                          };
+                collection.Insert(driverPosition);
+            }
+
         }
     }
 }

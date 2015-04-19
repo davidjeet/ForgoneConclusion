@@ -6,7 +6,7 @@ namespace Data.Model
     /// A Summary of flags. (this object should never hit MongoDB directly. 
     /// It should be transformed into a driverposition object which is transformed!)
     /// </summary>
-    public class FlagSummary
+    public class Flag
     {
         public string CustomerId { get; set; }
 
@@ -15,6 +15,12 @@ namespace Data.Model
         public DateTime Time { get; set; }
 
         public Position Position { get; set; }
+
+        public double Altitude { get; set; }
+
+        public double AltitudeAccuracy { get; set; }
+
+        public double Heading { get; set; }
     }
 
     public class Position
