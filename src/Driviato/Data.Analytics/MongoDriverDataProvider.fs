@@ -15,7 +15,7 @@ type MongoDriverDataProvider() =
         let database = server.GetDatabase("battlehackraleigh");
         let collection = database.GetCollection<DriverPosition>("driverpositions");
         let collection' = collection.AsQueryable()
-        let records = collection'.Where(fun x -> x.DriverId  = Guid.Parse(driverId))
+        let records = collection'.Where(fun x -> x.DriverId  = driverId)
         records |> Seq.head
 
 

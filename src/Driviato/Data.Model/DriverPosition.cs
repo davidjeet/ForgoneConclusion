@@ -11,7 +11,7 @@ namespace Data.Model
         public ObjectId _id { get; set; }
 
         [BsonRepresentation(BsonType.String)]
-        public Guid DriverId { get; set; }
+        public String DriverId { get; set; }
 
         public double Latitude { get; set; }
 
