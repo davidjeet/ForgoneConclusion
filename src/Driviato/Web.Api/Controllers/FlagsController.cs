@@ -8,7 +8,7 @@ using System.Web.Http;
 namespace Web.Api.Controllers
 {
     using Data.Model;
-
+    using Data.Analytics;
     using Web.Api.Infrastructure.DataAccess;
 
     public class FlagsController : ApiController
@@ -31,8 +31,9 @@ namespace Web.Api.Controllers
                                           ////Type = item.Type,
                                           };
                 collection.Insert(driverPosition);
-            }
 
+
+            }
         }
     }
 }

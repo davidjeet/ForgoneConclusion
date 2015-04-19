@@ -2,7 +2,7 @@
 
 open Data.Model
 
-type ProfileProfile() = 
+type public ProfileProfile() = 
     member this.HandleData (driverId) = 
         let notification = new SendGridNotification() :> INotificaton
         let debitService = new BrainTreeDebitService() :> IDebitService
