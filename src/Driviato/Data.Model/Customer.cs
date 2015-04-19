@@ -12,17 +12,16 @@ namespace Data.Model
     [BsonIgnoreExtraElements]
     public class Customer
     {
-        ////[BsonRepresentation(BsonType.ObjectId)]
-        [BsonIdAttribute] 
+        [BsonIdAttribute]
         public string Id { get; set; }
+
+        public string BraintreePaymentToken { get; set; } // "62n3ng"
 
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
 
         public string Email { get; set; }
-
-        public string BraintreePaymentToken { get; set; } // "62n3ng"
 
         [BsonIgnore]
         public string Number { get; set; } //"4111111111111111",
