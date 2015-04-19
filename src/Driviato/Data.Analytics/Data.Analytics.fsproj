@@ -62,7 +62,7 @@
     <Compile Include="BrainTreeDebitService.fs" />
     <Compile Include="VenmoCreditService.fs" />
     <Compile Include="GoogleMapsSpeedLimitProvider.fs" />
-    <Compile Include="MongoDriverDataProvider.fs" />
+    <Compile Include="MongoDataProvider.fs" />
     <Compile Include="DriverAnalysis.fs" />
     <Compile Include="DriverProfile.fs" />
     <None Include="BrainTreeScript.fsx" />

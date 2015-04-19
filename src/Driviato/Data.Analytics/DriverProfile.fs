@@ -8,19 +8,20 @@ type ProfileProfile() =
         let debitService = new BrainTreeDebitService() :> IDebitService
         let creditService = new VenmoCreditService() :> ICreditService
         let speedLimitProvider = new GoogleMapsSpeedLimitProvider() :> ISpeedLimitProvider
-        let driverDataProvider = new MongoDriverDataProvider();
+        let dataProvider = new MongoDataProvider();
         let driverAnalysis = new DriverAnalysis()
 
-        //TODO start here
-        //let customer = 
+
         let brainTreeToken = "";
 
-        let driverData = driverDataProvider.GetLatestDriverData(driverId)
+        let driverData = dataProvider.GetLatestDriverData(driverId)
         let speedLimit = float (speedLimitProvider.GetSpeedLimit(driverData.Latitude, driverData.Longitude))
         let analysis = driverAnalysis.WasDriverSpeeding(driverData.Speed,speedLimit)
-        ()
-//        match analysis with 
-//        | true -> 
-//            debitService.DebitAccount(driverData.DriverId.ToString(),brainTreeToken, 10.)
-//            notification.SendEmail(driverData.)
-//        ()
+        let customerData = dataProvider.GetCustomerDataFromDriverId(driverId)
+        match analysis with 
+        | true -> 
+            debitService.DebitAccount(driverData.DriverId.ToString(),brainTreeToken, 10.M)
+            notification.SendEmail(customerData.Email,"You were speeding","You were speeding")
+        | false ->
+            creditService.CreditAccount(customerData.Email,0.01)
+        
