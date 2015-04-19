@@ -28,6 +28,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Model", "Data.Model\Da
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Data.Analytics", "Data.Analytics\Data.Analytics.fsproj", "{D5C9553F-C034-4F60-966D-5142AD837CD7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{21A9A0B8-08DC-4C29-B49D-E72822D7102F}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Users\jamie\Desktop\4Gone.DriveSafe.Analytics\Data\GoogleSpeedLimit.json = ..\..\..\..\Users\jamie\Desktop\4Gone.DriveSafe.Analytics\Data\GoogleSpeedLimit.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
