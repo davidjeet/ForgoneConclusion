@@ -1,24 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data.Model
 {
-    using MongoDB.Bson;
-    using MongoDB.Bson.Serialization.Attributes;
-
     /// <summary>
-    /// A Summary of flags.
+    /// A Summary of flags. (this object should never hit MongoDB directly. 
+    /// It should be transformed into a driverposition object which is transformed!)
     /// </summary>
     public class FlagSummary
     {
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public string CustomerId { get; set; }
 
-        public Guid DriverId { get; set; }
+        public string Type { get; set; }
 
+        public DateTime Time { get; set; }
 
+        public Position Position { get; set; }
+    }
+
+    public class Position
+    {
+        public Position(string description, double lat, double lng)
+        {
+            Description = description ?? "";
+            Coordinates = new Coordinates { Latitude = lat, Longtitude = lng };
+
+        }
+
+        public string Description { get; set; }
+
+        public Coordinates Coordinates { get; set; }
+    }
+
+    public class Coordinates
+    {
+        public double Latitude { get; set; }
+
+        public double Longtitude { get; set; }
     }
 }
