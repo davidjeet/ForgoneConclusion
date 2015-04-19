@@ -20,6 +20,8 @@ namespace Data.Model
 
         public string LastName { get; set; }
 
+        public string Email { get; set; }
+
         public string BraintreePaymentToken { get; set; } // "62n3ng"
 
 

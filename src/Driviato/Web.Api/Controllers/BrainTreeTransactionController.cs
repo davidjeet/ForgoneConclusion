@@ -23,7 +23,7 @@ namespace Web.Api.Controllers
                 PrivateKey = "765479fccc7bae123b912ca23206fe09"
             };
 
-            //3. retreive from mongo and make a transaction when I want to
+            // Retreive from mongo and make a transaction when I want to
             var collection2 = MongoHelper.Current.Database.GetCollection<Customer>("customers");
             var customer = collection2.AsQueryable().FirstOrDefault(x => x.Id == id);
             if (customer != null)
