@@ -30,7 +30,7 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Data.Analytics", "Data.Anal
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{21A9A0B8-08DC-4C29-B49D-E72822D7102F}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\Users\jamie\Desktop\4Gone.DriveSafe.Analytics\Data\GoogleSpeedLimit.json = ..\..\..\..\Users\jamie\Desktop\4Gone.DriveSafe.Analytics\Data\GoogleSpeedLimit.json
+		Data\GoogleSpeedLimit.json = Data\GoogleSpeedLimit.json
 	EndProjectSection
 EndProject
 Global

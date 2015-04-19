@@ -1,9 +1,12 @@
 ﻿namespace Data.Analytics
 
-type ProfileProfile() = 
-    member this.Notify = "F#"
-    member this.DebitViolators = "F#"
-    member this.CreditGoodDrivers = "F#"
-    member this.AnalyzeData = "F#"
-    member this.HandleData = "F#"
+open Data.Model
 
+type ProfileProfile() = 
+    member this.HandleData () = 
+        let notification = new SendGridNotification() :> INotificaton
+        let debitService = new BrainTreeDebitService() :> IDebitService
+        let creditService = new VenmoCreditService() :> ICreditService
+        let speedLimitProvider = new GoogleMapsSpeedLimitProvider() :> ISpeedLimitProvider
+        let driverAnalysis = new DriverAnalysis()
+        ()
