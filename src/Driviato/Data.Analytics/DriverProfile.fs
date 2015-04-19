@@ -10,6 +10,7 @@ type public DriverProfile() =
         let speedLimitProvider = new GoogleMapsSpeedLimitProvider() :> ISpeedLimitProvider
         let dataProvider = new MongoDataProvider();
         let driverAnalysis = new DriverAnalysis()
+        let prediction = new AzureMLPrediction()
 
         let brainTreeToken = "";
 
@@ -23,4 +24,12 @@ type public DriverProfile() =
             notification.SendEmail(customerData.Email,"You were speeding","You were speeding")
         | false ->
             creditService.CreditAccount(customerData.Email,0.01)
+
+        let predictedSpeed = Async.RunSynchronously(prediction.InvokeService(driverId))
+        let predictedSpeed' = System.Int32.Parse(predictedSpeed)
+        let speedLimit' = System.Convert.ToInt32(speedLimit)
+        let prediction = if(predictedSpeed' > speedLimit') then true else false
+        match prediction with
+        | true -> notification.SendEmail(customerData.Email,"You might speed soon","You might speed soon")
+        | false-> ()
         
