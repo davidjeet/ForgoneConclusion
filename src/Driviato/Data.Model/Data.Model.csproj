@@ -53,6 +53,7 @@
     <Compile Include="DriverPosition.cs" />
     <Compile Include="Flag.cs" />
     <Compile Include="FlagSummary.cs" />
+    <Compile Include="INotificaton.cs" />
     <Compile Include="PaymentHistory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransactionItem.cs" />
