@@ -45,6 +45,13 @@
     <Compile Include="Library1.fs" />
     <None Include="Script.fsx" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data.Model\Data.Model.csproj">
+      <Name>Data.Model</Name>
+      <Project>{34a33ee6-a999-4f5d-aa1d-cd12048435e8}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
   </PropertyGroup>
