@@ -7,6 +7,8 @@ using System.Web.Http;
 
 namespace Web.Api.Controllers
 {
+    using System.Web.Http.Cors;
+
     using Braintree;
 
     using Web.Api.Infrastructure.DataAccess;
