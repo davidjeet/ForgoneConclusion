@@ -239,10 +239,6 @@
     <Content Include="Views\Home\TestGetAllDriverPositions.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Data.Analytics\Data.Analytics.fsproj">
-      <Project>{d5c9553f-c034-4f60-966d-5142ad837cd7}</Project>
-      <Name>Data.Analytics</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Data.Model\Data.Model.csproj">
       <Project>{34a33ee6-a999-4f5d-aa1d-cd12048435e8}</Project>
       <Name>Data.Model</Name>

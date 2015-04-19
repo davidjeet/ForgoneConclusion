@@ -61,7 +61,6 @@
     <Compile Include="SendGridNotification.fs" />
     <Compile Include="BrainTreeDebitService.fs" />
     <Compile Include="VenmoCreditService.fs" />
-    <Compile Include="GoogleMapsSpeedLimitProvider.fs" />
     <Compile Include="MongoDataProvider.fs" />
     <Compile Include="DriverAnalysis.fs" />
     <Compile Include="DriverProfile.fs" />
@@ -72,6 +71,7 @@
     <None Include="VenmoScript.fsx" />
     <Content Include="packages.config" />
     <Content Include="app.config" />
+    <Compile Include="GoogleMapsSpeedLimitProvider.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Braintree-2.40.0">
