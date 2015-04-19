@@ -36,4 +36,110 @@ angular.module('driviato.services', [])
       return flags;
     }
   };
-});
+})
+
+.factory('PaymentService', function($http) {
+  var baseApiUrl = "http://driviato.azurewebsites.net/api";
+
+  var updateCard = function (card) {
+    var data = {
+        "FirstName": "Joe", 
+        "LastName": "Driver",
+        "Email": "battlehack@i1n.net",
+        "CreditCard": {
+            "FirstName": "Jane",
+            "LastName": "Driver"
+          },
+          "CardholderName": "Jane Driver",
+          "ExpirationMonth": card.expirationMonth,
+          "ExpirationYear": card.expirationYear, 
+          "ExpirationDate": "01/2016", 
+          "Number": card.cardNumber
+        };
+
+    $http({
+          method: "POST",
+          url: baseApiUrl + "/CreateCustomer",
+          data: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          }
+        })
+        .success(function (response) {
+          console.log(response);
+        })
+        .error(function (error) {
+          console.log(error);
+        });
+  };
+
+  return {
+    save: updateCard
+  };
+})
+
+    .factory("PositionService", function($q, DataAgent) {
+        var positions = [],
+            intervalMs = 10000,
+            intervalId = null;
+
+        var onSuccess = function (position) {
+                positions.push(position);
+            },
+            onError = function (error) {
+                console.error(error);
+            };
+
+        function recordPosition() {
+            if (navigator.geolocation && navigator.geolocation.getCurrentPosition) {
+                navigator.geolocation.getCurrentPosition(onSuccess, onError);
+            }
+        }
+
+        function sendData() {
+            DataAgent.send(positions);
+        }
+
+        function start() {
+            intervalId = window.setInterval(recordPosition, intervalMs)
+        }
+
+        function stop() {
+            window.clearTimeout(intervalId);
+        }
+
+        start();
+
+      return {
+          sendData: sendData,
+            start: start,
+            stop: stop
+      };
+    })
+
+    .factory("DataAgent", function ($http) {
+      var baseApiUrl = "http://driviato.azurewebsites.net/api";
+
+      function send (data) {
+        $http({
+          method: "POST",
+          url: baseApiUrl + "/driverPositions",
+          data: data,
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          }
+        })
+        .success(function (response) {
+          
+        })
+        .error(function (reason) {
+          
+        });
+      }
+
+      return {
+        send: send
+      };
+    });

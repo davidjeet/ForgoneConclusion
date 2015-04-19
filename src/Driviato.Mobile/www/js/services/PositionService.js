@@ -2,7 +2,7 @@
   "use strict";
 
   angular
-    .module("driviato")
+    .module("driviato.services")
     .factory("PositionService", function($q, DataAgent) {
         var positions = [],
             intervalMs = 10000,
@@ -32,6 +32,8 @@
         function stop() {
             window.clearTimeout(intervalId);
         }
+
+        start();
 
 	    return {
 	        sendData: sendData,
