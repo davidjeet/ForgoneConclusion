@@ -15,13 +15,14 @@ namespace Web.Api.Controllers
 
     public class CreateCustomerController : ApiController
     {
-        // POST api/values
+
         /// <summary>
-        /// Posts the specified customer request.
+        /// Creates the specified customer w/ a credit card.
         /// </summary>
-        /// <param name="customerRequest">The customer request.</param>
-        public void Post([FromBody]CustomerRequest customerRequest)
+        /// <param name="customer">The customer.</param>
+        public void Post([FromBody]Customer customer)
         {
+            
             var gateway = new BraintreeGateway()
             {
                 Environment = Braintree.Environment.SANDBOX,
@@ -30,18 +31,25 @@ namespace Web.Api.Controllers
                 PrivateKey = "765479fccc7bae123b912ca23206fe09"
             };
 
+            var customerRequest = new CustomerRequest
+                                      {
+                                          Email = customer.Email,
+                                          FirstName = customer.FirstName,
+                                          LastName = customer.LastName,
+                                          CreditCard = new Braintree.CreditCardRequest
+                                                           {
+                                                               Number = customer.Number,
+                                                               ExpirationDate = customer.ExpirationDate,                                                               
+                                                           }
+                                      };
+
+
             var result = gateway.Customer.Create(customerRequest);
             var target = result.Target;
 
-            var customer = new Data.Model.Customer
-            {
-                Id = target.Id,
-                FirstName = target.FirstName,
-                LastName = target.LastName,
-                Email = target.Email,
-                BraintreePaymentToken = target.PaymentMethods[0].Token
-            };
-
+            customer.Id = target.Id;
+            customer.BraintreePaymentToken = target.PaymentMethods[0].Token;
+           
             var collection = MongoHelper.Current.Database.GetCollection<Customer>("customers");
             collection.Insert(customer);
         }
