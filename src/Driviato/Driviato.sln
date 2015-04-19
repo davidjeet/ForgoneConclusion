@@ -26,6 +26,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Api", "Web.Api\Web.Api.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Model", "Data.Model\Data.Model.csproj", "{34A33EE6-A999-4F5D-AA1D-CD12048435E8}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Data.Analytics", "Data.Analytics\Data.Analytics.fsproj", "{D5C9553F-C034-4F60-966D-5142AD837CD7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{21A9A0B8-08DC-4C29-B49D-E72822D7102F}"
+	ProjectSection(SolutionItems) = preProject
+		Data\GoogleSpeedLimit.json = Data\GoogleSpeedLimit.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bin", "Bin", "{521889EA-ED74-49BD-AC90-997FC8B5666E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +49,10 @@ Global
 		{34A33EE6-A999-4F5D-AA1D-CD12048435E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34A33EE6-A999-4F5D-AA1D-CD12048435E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34A33EE6-A999-4F5D-AA1D-CD12048435E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5C9553F-C034-4F60-966D-5142AD837CD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5C9553F-C034-4F60-966D-5142AD837CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5C9553F-C034-4F60-966D-5142AD837CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5C9553F-C034-4F60-966D-5142AD837CD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

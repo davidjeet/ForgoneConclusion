@@ -1,0 +1,69 @@
+{
+  "speedLimits": [
+    {
+      "placeId": "ChIJ1Wi6I2pNFmsRQL9GbW7qABM",
+      "speedLimit": 45,
+      "units": "MPH"
+    },
+    {
+      "placeId": "ChIJ58xCoGlNFmsRUEZUbW7qABM",
+      "speedLimit": 45,
+      "units": "MPH"
+    },
+    {
+      "placeId": "ChIJ9RhaiGlNFmsR0IxAbW7qABM",
+      "speedLimit": 45,
+      "units": "MPH"
+    },
+    {
+      "placeId": "ChIJabjuhGlNFmsREIxAbW7qABM",
+      "speedLimit": 45,
+      "units": "MPH"
+    },
+    {
+      "placeId": "ChIJcSAlFWpNFmsRMHlUbW7qABM",
+      "speedLimit": 45,
+      "units": "MPH"
+    },
+    {
+      "placeId": "ChIJI2FUTGhNFmsRcHpAbW7qABM",
+      "speedLimit": 45,
+      "units": "MPH"
+    },
+    {
+      "placeId": "ChIJiy6YT2hNFmsRkHZAbW7qABM",
+      "speedLimit": 45,
+      "units": "MPH"
+    },
+    {
+      "placeId": "ChIJoR7CemhNFmsRQB9QbW7qABM",
+      "speedLimit": 45,
+      "units": "MPH"
+    },
+    {
+      "placeId": "ChIJP2m_FWpNFmsRIHlUbW7qABM",
+      "speedLimit": 45,
+      "units": "MPH"
+    },
+    {
+      "placeId": "ChIJtV7La2pNFmsRAGpHbW7qABM",
+      "speedLimit": 45,
+      "units": "MPH"
+    },
+    {
+      "placeId": "ChIJW5JAZmpNFmsRegG0-Jc80sM",
+      "speedLimit": 45,
+      "units": "MPH"
+    },
+    {
+      "placeId": "ChIJW9R7smlNFmsRMH1AbW7qABM",
+      "speedLimit": 45,
+      "units": "MPH"
+    },
+    {
+      "placeId": "ChIJy8c0r2lNFmsRQEZUbW7qABM",
+      "speedLimit": 45,
+      "units": "MPH"
+    }
+  ]
+}

@@ -11,8 +11,8 @@ namespace Web.Api.Controllers
 {
     public class BrainTreeTransactionController : ApiController
     {
-        // POST api/values
-        public bool Post([FromBody] string id, double amount)
+
+        public bool Post([FromBody]TransactionInfo transactionInfo)
         {
             Result<Transaction> tresult = null;
             var gateway = new BraintreeGateway()
@@ -23,14 +23,14 @@ namespace Web.Api.Controllers
                 PrivateKey = "765479fccc7bae123b912ca23206fe09"
             };
 
-            //3. retreive from mongo and make a transaction when I want to
+            // Retreive from mongo and make a transaction when I want to
             var collection2 = MongoHelper.Current.Database.GetCollection<Customer>("customers");
-            var customer = collection2.AsQueryable().FirstOrDefault(x => x.Id == id);
+            var customer = collection2.AsQueryable().FirstOrDefault(x => x.Id == transactionInfo.CustomerId);
             if (customer != null)
             {
                 var trequest = new TransactionRequest
                 {
-                    Amount = 10.00M,
+                    Amount = Convert.ToDecimal(transactionInfo.Amount),
                     CustomerId = customer.Id,
                     PaymentMethodToken = customer.BraintreePaymentToken
                 };
@@ -40,11 +40,15 @@ namespace Web.Api.Controllers
                 {
                     Console.WriteLine("Yes!!!! " + tresult.Message);
                 }
-
-
             }
 
             return (tresult != null) ? tresult.IsSuccess() : false;
+        }
+
+        public class TransactionInfo
+        {
+            public string CustomerId { get; set; }
+            public double Amount { get; set; }
         }
     }
 }

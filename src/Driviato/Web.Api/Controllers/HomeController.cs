@@ -110,7 +110,7 @@ namespace Web.Api.Controllers
         {
             var driverPosition = new DriverPosition
                        {
-                           DriverId = Guid.NewGuid(),
+                           DriverId = "123465",
                            Latitude = 36.828959f,
                            Longitude = -79.895663f,
                            Altitude = 0,
