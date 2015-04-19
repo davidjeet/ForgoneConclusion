@@ -1,0 +1,33 @@
+<ion-view view-title="DriveSafe &gt; Account">
+  <ion-content class="account">
+    <div class="list card">
+      <div class="item item-divider item-icon-right">Profile
+            <i class="icon ion-edit" style="font-size:1.25em"></i>
+      </div>
+    <ion-item class="detail">
+        <label>Name:</label> <span ng-bind="profile.name"></span>
+    </ion-item>
+    <ion-item class="detail">
+        <label>Email:</label> <span ng-bind="profile.email"></span>
+    </ion-item><br />
+
+      <div class="item item-divider item-icon-right">Payments
+            <i class="icon ion-edit" ui-sref="tab.payment-method" style="font-size:1.25em"></i>
+      </div>
+    <ion-item>
+        <label>Payment Method:</label> <span>Card ending in 0214</span>
+        <img src="/img/badgelongbluesolid.png"/>
+    </ion-item><br />
+
+      <div class="item item-divider">Preferences</div>
+    <ion-list>
+    <ion-toggle  ng-model="settings.enableTracking">
+        Enable Tracking
+    </ion-toggle>
+    <ion-toggle  ng-model="settings.sendUpdates">
+        Send Updates by Email
+    </ion-toggle>
+    </ion-list>
+    </div>
+  </ion-content>
+</ion-view>
