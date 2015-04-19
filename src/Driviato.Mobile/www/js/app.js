@@ -14,7 +14,9 @@ angular.module('driviato', ['ionic', 'driviato.controllers', 'driviato.services'
     }
   });
 })
-
+.config(['$sceDelegateProvider', function($sceDelegateProvider) {
+     $sceDelegateProvider.resourceUrlWhitelist(['self', 'http://driviato.azurewebsites.net/**']);
+ }])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('tab', {

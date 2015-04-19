@@ -1,4 +1,4 @@
-<ion-view view-title="DriveSafe &gt; Dashboard">
+<ion-view view-title="DriveSafe &gt; Account &gt; Payment">
   <ion-content class="padding account">
     <div class="list card">
       <div class="item item-divider">Payment Method</div>
@@ -13,6 +13,19 @@
       <div class="item item-body ion-item">
         <label>Name on card:</label>
         <span><input type="text" size="50" style="width: 90%"/></span>
+      </div>
+      <div class="item item-body ion-item">
+        <label>Expiration:</label>
+        <span><select><option>January</option></select> <select><option>2016</option></select></span>
+      </div>
+      <div class="item item-body ion-item">
+        <div class="row">
+           <div class="col text-center">
+              <button class="button button-med button-light" ui-sref="tab.account">Cancel</button> 
+              &nbsp; &nbsp;
+              <button class="button button-med button-positive" ng-click="save()">Save</button>
+           </div>
+        </div>
       </div>
     </div>
   </ion-content>

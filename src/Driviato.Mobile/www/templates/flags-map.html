@@ -1,0 +1,29 @@
+<ion-view title="{{vm.selectedDate | date:'EEEE, MMMM dd, yyyy'}}" ng-controller="scheduleMap as vm" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <a class="button button-clear button-icon icon ion-chevron-left" ng-href="#/app/schedule-day/0"></a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <a ng-click="vm.toggleUnScheduleLocations()" class="button button-clear icon ion-location"
+           ng-class="{'button button-clear icon ion-location': !vm.showUnscheduleLocations, 'button button-outline icon ion-location': vm.showUnscheduleLocations}">
+        </a>
+    </ion-nav-buttons> 
+    <ion-content class="has-header" scroll="false">
+        <ui-gmap-google-map data-tap-disabled="true" draggable="true" center="vm.map.center" zoom="vm.map.zoom" bounds="vm.map.bounds" options="vm.map.options" events="vm.map.events">
+            <ui-gmap-markers idkey="'inspectionRecordId'" models="vm.map.markers" coords="'self'" icon="'icon'" click="'onClicked'" options="'options'"
+                             doCluster="map.doClusterRandomMarkers" clusterOptions="map.clusterOptions" labelContent="'count'" labelClass="marker-labels">
+            </ui-gmap-markers>
+        </ui-gmap-google-map>
+    </ion-content>
+    <ion-footer-bar ng-if="vm.showAddressBar" align-title="left" class="bar-positive address-bar" >
+        <h1 class="title address-title">
+            <a class="no-underline" href="#/app/workitemmain/workitem/{{vm.selectedMarker.inspectionRecordId}}/assignment">
+                <b>{{vm.selectedMarker.vehicleData.vehicleMake}} {{vm.selectedMarker.vehicleData.vehicleModel}}</b><br />{{vm.selectedMarker.claimant.firstName}} {{vm.selectedMarker.claimant.lastName}} <br />
+                {{ vm.selectedMarker.schedule}}
+            </a>
+        </h1>
+        <div class="buttons" ng-click="vm.getDirections(vm.selectedMarker)">
+            <button class="button positive button-icon icon ion-model-s" style="background:#154995;"></button>            
+        </div>
+    </ion-footer-bar>
+</ion-view>
+
