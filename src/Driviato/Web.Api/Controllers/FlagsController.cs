@@ -17,6 +17,7 @@ namespace Web.Api.Controllers
         public void Post([FromBody]Flag [] flags)
         {
             var collection = MongoHelper.Current.Database.GetCollection<DriverPosition>("driverpositions");
+            var customerId = flags[0].CustomerId;
             foreach (var item in flags)
             {
                 var driverPosition = new DriverPosition
@@ -31,9 +32,9 @@ namespace Web.Api.Controllers
                                           ////Type = item.Type,
                                           };
                 collection.Insert(driverPosition);
-
-
             }
+            var profile = new DriverProfile();
+            profile.HandleData(customerId);
         }
     }
 }

@@ -2,7 +2,7 @@
 
 open Data.Model
 
-type public ProfileProfile() = 
+type public DriverProfile() = 
     member this.HandleData (driverId) = 
         let notification = new SendGridNotification() :> INotificaton
         let debitService = new BrainTreeDebitService() :> IDebitService
@@ -10,7 +10,6 @@ type public ProfileProfile() =
         let speedLimitProvider = new GoogleMapsSpeedLimitProvider() :> ISpeedLimitProvider
         let dataProvider = new MongoDataProvider();
         let driverAnalysis = new DriverAnalysis()
-
 
         let brainTreeToken = "";
 
