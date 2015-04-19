@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="SendGridNotification.fs" />
     <Compile Include="BrainTreeDebitService.fs" />
+    <Compile Include="VenmoCreditService.fs" />
     <Compile Include="DriverProfile.fs" />
     <None Include="DebtBrainTreeScript.fsx" />
     <None Include="GetDriverPositionScript.fsx" />
@@ -87,12 +88,17 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Numerics" />
     <ProjectReference Include="..\Data.Model\Data.Model.csproj">
       <Name>Data.Model</Name>
       <Project>{34a33ee6-a999-4f5d-aa1d-cd12048435e8}</Project>
       <Private>True</Private>
     </ProjectReference>
+    <Reference Include="VenmoWrapper">
+      <HintPath>..\packages\VenmoWrapper.1.0.1.0\lib\portable-win+net40+sl50+wp80\VenmoWrapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
