@@ -38,6 +38,7 @@ namespace Web.Api.Controllers
                 Id = target.Id,
                 FirstName = target.FirstName,
                 LastName = target.LastName,
+                Email = target.Email,
                 BraintreePaymentToken = target.PaymentMethods[0].Token
             };
 
