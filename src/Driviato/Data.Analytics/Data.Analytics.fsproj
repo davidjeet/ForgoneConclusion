@@ -63,6 +63,7 @@
     <Compile Include="VenmoCreditService.fs" />
     <Compile Include="MongoDataProvider.fs" />
     <Compile Include="GoogleMapsSpeedLimitProvider.fs" />
+    <Compile Include="IBMWatsonTranslationService.fs" />
     <Compile Include="DriverAnalysis.fs" />
     <Compile Include="AzureMLPrediction.fs" />
     <Compile Include="DriverProfile.fs" />
@@ -72,6 +73,7 @@
     <None Include="SendGridScript.fsx" />
     <None Include="VenmoScript.fsx" />
     <None Include="ConsumeMLScript.fsx" />
+    <None Include="IBMPrediction.fsx" />
     <Content Include="packages.config" />
     <Content Include="app.config" />
   </ItemGroup>
